@@ -33,7 +33,7 @@ class PedidosModel {
             })
         });
     }
-    update(id_pedido, nome_pedido, id_cliente) {
+    update(id_pedido, nome_cliente, id_cliente) {
         let sql = `UPDATE pedidos SET nome_cliente="${nome_doce}", id_cliente="${id_cliente}" WHERE id_pedido="${id_pedido}";`
         return new Promise((resolve, reject) => {
             this.conexao.query(sql, (erro, retorno) => {
