@@ -1,6 +1,6 @@
 import express from "express"
-import SistemaController from "./Controllers/SistemaController.js"
-import DoceController from "./Controllers/DoceController.js"
+import SistemaController from "./src/Controllers/ClientesController.js/SistemaController.js"
+import DoceController from "./src/Controllers/ClientesController.js/DoceController.js"
 
 const server = express()
 
@@ -10,14 +10,14 @@ server.get("/",(req,res)=>{
     res.status(200).json("Servidor Funcionando")
 })
 
-server.post("/clientes",SistemaController.create)
-server.get("/clientes",SistemaController.read)
-server.put("/clientes/:id_clientes",SistemaController.update)
-server.delete("/clientes/:id_clientes",SistemaController.delete)
+server.post("/clientes",ClientesController.create)
+server.get("/clientes",ClientesController.read)
+server.put("/clientes/:id_clientes",ClientesController.update)
+server.delete("/clientes/:id_clientes",ClientesController.delete)
 
-server.post("/doces",DoceController.create)
-server.get("/doces",DoceController.read)
-server.put("/doces/:id_doce",DoceController.update)
-server.delete("/doces/:id_doce",DoceController.delete)
+server.post("/Pedidos",PedidosController.create)
+server.get("/Pedidos",PedidosController.read)
+server.put("/Pedidos/:id_pedidos",PedidosController.update)
+server.delete("/Pedidos/:id_pedidos",PedidosController.delete)
 
 server.listen(5000)
