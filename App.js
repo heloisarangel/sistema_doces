@@ -1,10 +1,38 @@
-const config = {
-    db:{
-        host:"localhost",
-        user:"root",
-        password:"",
-        database:"sistema_doces"
-    }
-}
+import express from "express"
+import ClientesController from "./src/Controllers/ClientesController.js"
+import PedidosController from "./src/Controllers/PedidosContoller.js"
 
-export default config;
+const server = express()
+
+server.use(express.json())
+
+server.get("/",(req,res)=>{
+    res.status(200).json("Servidor Funcionando")
+})
+
+server.post("/clientes",ClientesController.create)
+server.get("/clientes",ClientesController.read)
+server.put("/clientes/:id_clientes",ClientesController.update)
+server.delete("/clientes/:id_clientes",ClientesController.delete)
+
+server.post("/Pedidos",PedidosController.create)
+server.get("/Pedidos",PedidosController.read)
+server.put("/Pedidos/:id_pedidos",PedidosController.update)
+server.delete("/Pedidos/:id_pedidos",PedidosController.delete)
+
+server.listen(5000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
