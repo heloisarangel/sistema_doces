@@ -7,7 +7,7 @@ class PedidosModel {
         console.debug("Conectado")
     }
 
-    create(nome_cliente, id_cliente) {
+    create(nome_cliente, id_pedidos) {
         let sql = `INSERT INTO pedidos (nome_cliente,id_pedidos) VALUES("${nome_cliente}","${id_cliente}");`
 
         return new Promise((resolve, reject) => {
