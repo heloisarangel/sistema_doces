@@ -1,4 +1,4 @@
-import CLientesModel from "../Models/CLienteModel.js";
+import clientesModel from "../Models/ClientesModel.js";
 
 class ClientesController{ constructor(){
 
@@ -6,7 +6,7 @@ class ClientesController{ constructor(){
  
 create(req,res){
     const nome_cliente= req.body.nome_cliente
-    ClienteModel.create(nome_cliente).then(
+    clientesModel.create(nome_cliente).then(
         resposta =>{
             console.debug("Cadastrando uma cliente")
             res.status(resposta[0]).json(resposta[1])
@@ -20,7 +20,7 @@ create(req,res){
     )
 }
 read(req,res){
-    ClienteModel.read().then(
+    clientesModel.read().then(
         resposta =>{
             console.debug("Exibindo clientes")
             res.status(resposta[0]).json(resposta[1])
@@ -36,7 +36,7 @@ read(req,res){
 update(req,res){
     const id_cliente = req.params.id_cliente
     const nome_cliente = req.body.nome_cliente
-    ClienteModel.update(id_cliente,nome_cliente).then(
+    clientesModel.update(id_cliente,nome_cliente).then(
         resposta =>{
             console.debug("Atualizando cliente")
             res.status(resposta[0]).json(resposta[1])
@@ -52,7 +52,7 @@ update(req,res){
 
 delete(req,res){
     const id_cliente = req.params.id_cliente
-    ClienteModel.delete(id_cliente).then(
+    clientesModel.delete(id_cliente).then(
         resposta =>{
             console.debug("Deletando cliente")
             res.status(resposta[0]).json(resposta[1])

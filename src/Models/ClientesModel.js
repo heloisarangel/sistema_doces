@@ -1,5 +1,5 @@
 import mysql from "mysql2" 
-import config from "../Config.js"
+import config from "../../Config.js"
 
 class ClientesModel{
 
@@ -7,7 +7,7 @@ class ClientesModel{
          this.conexao = mysql.createConnection(config.db)
           console.debug("Conectado") }
 
-create(nome_categoria){
+create(nome_cliente){
     let sql = `INSERT INTO cliente (nome_cliente) VALUES("${nome_cliente}");`
 
     return new Promise((resolve,reject)=>{

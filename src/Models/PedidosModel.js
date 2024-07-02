@@ -1,5 +1,5 @@
 import mysql from "mysql2"
-import config from "../Config.js"
+import config from "../../Config.js"
 
 class PedidosModel {
     constructor() {
@@ -46,7 +46,7 @@ class PedidosModel {
         });
     }
     delete(id_pedido) {
-        let sql = `DELETE FROM pedido WHERE id_pedido="${id_pedido}"`
+        let sql = `DELETE FROM pedido WHERE id_pedidos="${id_pedido}"`
         return new Promise((resolve, reject) => {
             this.conexao.query(sql, (erro, retorno) => {
                 if (erro) {
